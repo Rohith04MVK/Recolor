@@ -10,7 +10,7 @@ def lab_to_rgb(L, ab):
     """
     Takes a batch of images
     """
-    
+
     L = (L + 1.) * 50.
     ab = ab * 110.
     Lab = torch.cat([L, ab], dim=1).permute(0, 2, 3, 1).cpu().numpy()
@@ -19,7 +19,8 @@ def lab_to_rgb(L, ab):
         img_rgb = lab2rgb(img)
         rgb_imgs.append(img_rgb)
     return np.stack(rgb_imgs, axis=0)
-    
+
+
 def visualize(model, data, save=True):
     model.net_G.eval()
     with torch.no_grad():
@@ -45,7 +46,8 @@ def visualize(model, data, save=True):
     plt.show()
     if save:
         fig.savefig(f"colorization_{time.time()}.png")
-        
+
+
 def log_results(loss_meter_dict):
     for loss_name, loss_meter in loss_meter_dict.items():
         print(f"{loss_name}: {loss_meter.avg:.5f}")
