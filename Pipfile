@@ -1,0 +1,12 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+torch = "==1.8.1"
+torchvision = "==0.9.1"
+numpy = "~=1.22.0"
+matplotlib = "~=3.5.1"
+scikit-image = "==0.19.1"
+Pillow = "~=8.2.0"
