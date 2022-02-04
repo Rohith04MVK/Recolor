@@ -3,7 +3,6 @@ from PIL import Image
 from skimage.color import rgb2lab
 from torch.utils.data import DataLoader, Dataset
 from torchvision import transforms
-from torchvision.utils import make_grid
 
 SIZE = 256
 
