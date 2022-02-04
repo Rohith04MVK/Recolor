@@ -23,7 +23,7 @@ def init_weights(net, init='norm', gain=0.02):
             nn.init.constant_(m.bias.data, 0.)
 
     net.apply(init_func)
-    print(f"Model initialized with {init} initialization")
+    print(f"Model initialized with {init} initialization with gain of {gain}")
     return net
 
 
