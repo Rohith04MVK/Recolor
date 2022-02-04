@@ -5,8 +5,8 @@ from torch import nn, optim
 from torchvision.models.resnet import resnet18
 
 from .initializers import *
-from .modules import UnetBlock
 from .loss import GANLoss
+from .modules import UnetBlock
 
 
 class Unet(nn.Module):
