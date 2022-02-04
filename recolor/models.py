@@ -1,4 +1,3 @@
-import imp
 import torch
 from fastai.vision.learner import create_body
 from fastai.vision.models.unet import DynamicUnet
@@ -52,7 +51,7 @@ class PatchDiscriminator(nn.Module):
         model += [self.get_layers(num_filters * 2 **
                                   n_down, 1, s=1, norm=False, act=False)]
         # activation for the last layer of the model
-        
+
         self.model = nn.Sequential(*model)
 
     # when needing to make some repeatitive blocks of layers,
