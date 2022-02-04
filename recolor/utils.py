@@ -1,3 +1,4 @@
+import argparse
 import time
 
 import matplotlib.pyplot as plt
@@ -85,3 +86,14 @@ def update_losses(model, loss_meter_dict, count):
     for loss_name, loss_meter in loss_meter_dict.items():
         loss = getattr(model, loss_name)
         loss_meter.update(loss.item(), count=count)
+
+
+def str2bool(arg):
+    if isinstance(arg, bool):
+        return arg
+    if arg.lower() in ('yes', 'true', 't', 'y', '1'):
+        return True
+    elif arg.lower() in ('no', 'false', 'f', 'n', '0'):
+        return False
+    else:
+        raise argparse.ArgumentTypeError('Boolean value expected.')
