@@ -43,7 +43,7 @@ class PatchDiscriminator(nn.Module):
     def __init__(self, input_c, num_filters=64, n_down=3):
         super().__init__()
         model = [self.get_layers(input_c, num_filters, norm=False)]
-        model += [self.get_layers(num_filters * 2 ** i, num_filters * 2 ** (i + 1), s=1 if i == (n_down-1) else 2)
+        model += [self.get_layers(num_filters * 2 ** i, num_filters * 2 ** (i + 1), s=1 if i == (n_down - 1) else 2)
                   for i in range(n_down)]  # the 'if' statement is taking care of not using
         # stride of 2 for the last block in this loop
         # Make sure to not use normalization or

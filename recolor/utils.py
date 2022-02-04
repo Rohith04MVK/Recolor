@@ -1,4 +1,5 @@
 import argparse
+import os
 import time
 
 import matplotlib.pyplot as plt
@@ -97,3 +98,7 @@ def str2bool(arg):
         return False
     else:
         raise argparse.ArgumentTypeError('Boolean value expected.')
+
+
+def exists(p, msg):
+    assert os.path.exists(p), msg
