@@ -32,8 +32,8 @@ class Unet(nn.Module):
         return self.model(x)
 
 
-def build_res_unet(n_input=1, n_output=2, size=256):
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+def build_res_unet(n_input=1, n_output=2, size=256, device="cpu"):
+    device = torch.device(device)
     body = create_body(resnet18, pretrained=True, n_in=n_input, cut=-2)
     net_G = DynamicUnet(body, n_output, (size, size)).to(device)
     return net_G
@@ -70,11 +70,10 @@ class PatchDiscriminator(nn.Module):
 
 class MainModel(nn.Module):
     def __init__(self, net_G=None, lr_G=2e-4, lr_D=2e-4,
-                 beta1=0.5, beta2=0.999, lambda_L1=100.):
+                 beta1=0.5, beta2=0.999, lambda_L1=100., device="cpu"):
         super().__init__()
 
-        self.device = torch.device(
-            "cuda" if torch.cuda.is_available() else "cpu")
+        self.device = torch.device(device)
         self.lambda_L1 = lambda_L1
 
         if net_G is None:

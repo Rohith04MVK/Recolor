@@ -51,6 +51,11 @@ def build_parser():
                         dest="epochs",
                         help="Number epochs to train the model for",
                         metavar="EPOCHS", required=True)
+
+    parser.add_argument("--use-gpu", type=str2bool,
+                        dest="use_gpu",
+                        help="Use a GPU if available",
+                        metavar="EPOCHS", required=True)
     return parser
 
 
@@ -58,6 +63,9 @@ def main():
     parser = build_parser()
     options = parser.parse_args()
     check_opts(options)
+    device = device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    if options.use_gpu is False:
+        device = "cpu"
 
     paths = []
     if options.type == "face":
@@ -90,7 +98,7 @@ def main():
 
     if options.pretrain is False:
 
-        model = MainModel()
+        model = MainModel(device=device)
         train_model(model, train_dl, val_dl, options.epochs)
     else:
         net_G = build_res_unet(n_input=1, n_output=2, size=256)

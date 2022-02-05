@@ -11,11 +11,11 @@ class ColorizationDataset(Dataset):
     def __init__(self, paths, split='train'):
         if split == 'train':
             self.transforms = transforms.Compose([
-                transforms.Resize((SIZE, SIZE),  Image.BICUBIC),
+                transforms.Resize((SIZE, SIZE), Image.BICUBIC),
                 transforms.RandomHorizontalFlip(),  # A little data augmentation!
             ])
         elif split == 'val':
-            self.transforms = transforms.Resize((SIZE, SIZE),  Image.BICUBIC)
+            self.transforms = transforms.Resize((SIZE, SIZE), Image.BICUBIC)
 
         self.split = split
         self.size = SIZE

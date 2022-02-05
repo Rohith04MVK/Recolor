@@ -1,6 +1,6 @@
 import tqdm
 
-from .utils import *
+from utils import *
 
 
 def train_model(model, train_dl, val_dl, epochs, display_every=200):
