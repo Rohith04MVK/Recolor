@@ -29,7 +29,7 @@ def validate_data_type(dtype):
 def build_parser():
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("--train-type", type=str,
+    parser.add_argument("--train-type", type=validate_data_type,
                         dest="type", help="What type of model to train",
                         metavar="TRAIN_TYPE", required=True)
 
