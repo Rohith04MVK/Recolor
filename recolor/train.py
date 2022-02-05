@@ -1,4 +1,4 @@
-import tqdm
+from tqdm import tqdm
 
 from utils import *
 

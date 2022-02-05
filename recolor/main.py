@@ -14,13 +14,13 @@ from .utils import exists, str2bool
 
 
 def check_opts(opts):
-    exists(opts.data_path, "Checkpoint not found!")
-    exists(opts.save_path, "In path not found!")
+    # exists(opts.data_path, "Data path not found!")
+    exists(opts.save_path, "Save path not found!")
     assert opts.epochs > 0, "Epochs must be higher than 0"
 
 
 def validate_data_type(dtype):
-    if dtype.lower() in ("face", "general"):
+    if dtype.lower() in ("face", ""):
         return dtype.lower()
     else:
         raise argparse.ArgumentTypeError("Invalid train type, supported are `face` and `general`")
@@ -47,7 +47,7 @@ def build_parser():
                         dest="pretrain", help=help_out, metavar="PRETRAIN",
                         required=True)
 
-    parser.add_argument("--epochs", type=str,
+    parser.add_argument("--epochs", type=int,
                         dest="epochs",
                         help="Number epochs to train the model for",
                         metavar="EPOCHS", required=True)
@@ -97,14 +97,13 @@ def main():
     print(len(train_dl), len(val_dl))
 
     if options.pretrain is False:
-
         model = MainModel(device=device)
         train_model(model, train_dl, val_dl, options.epochs)
     else:
-        net_G = build_res_unet(n_input=1, n_output=2, size=256)
+        net_G = build_res_unet(n_input=1, n_output=2, size=256, device=device)
         opt = optim.Adam(net_G.parameters(), lr=1e-4)
         criterion = nn.L1Loss()        
-        pretrain_generator(net_G, train_dl, opt, criterion, 20)
+        pretrain_generator(net_G, train_dl, opt, criterion, 20, device=device)
         torch.save(net_G.state_dict(), "{options.save_path}/res18-unet.pt")
 
         net_G = build_res_unet(n_input=1, n_output=2, size=256)
