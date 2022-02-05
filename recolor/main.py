@@ -20,7 +20,7 @@ def check_opts(opts):
 
 
 def validate_data_type(dtype):
-    if dtype.lower() in ("face", ""):
+    if dtype.lower() in ("face", "general"):
         return dtype.lower()
     else:
         raise argparse.ArgumentTypeError("Invalid train type, supported are `face` and `general`")
