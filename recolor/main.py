@@ -55,7 +55,7 @@ def build_parser():
     parser.add_argument("--use-gpu", type=str2bool,
                         dest="use_gpu",
                         help="Use a GPU if available",
-                        metavar="EPOCHS", required=True)
+                        metavar="USE_GPU", required=True)
     return parser
 
 
@@ -109,6 +109,6 @@ def main():
 
         net_G = build_res_unet(n_input=1, n_output=2, size=256)
         net_G.load_state_dict(torch.load("res18-unet.pt", map_location=device))
-        model = MainModel(net_G=net_G)
+        model = MainModel(net_G=net_G, device=device)
         train_model(model, train_dl, 20)
         torch.save(model.state_dict(), "final_model_weights.pt")
