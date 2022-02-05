@@ -63,10 +63,10 @@ def main():
     parser = build_parser()
     options = parser.parse_args()
     check_opts(options)
-    device = device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     if options.use_gpu is False:
         device = "cpu"
-
+    print(options)
     paths = []
     if options.type == "face":
         download_faces_data()
@@ -105,13 +105,13 @@ def main():
         net_G = build_res_unet(n_input=1, n_output=2, size=256, device=device)
         opt = optim.Adam(net_G.parameters(), lr=1e-4)
         criterion = nn.L1Loss()        
-        pretrain_generator(net_G, train_dl, opt, criterion, 20, device=device)
+        pretrain_generator(net_G, train_dl, opt, criterion, options.epochs, device=device)
         torch.save(net_G.state_dict(), "{options.save_path}/res18-unet.pt")
 
         net_G = build_res_unet(n_input=1, n_output=2, size=256)
         net_G.load_state_dict(torch.load("res18-unet.pt", map_location=device))
         model = MainModel(net_G=net_G, device=device)
-        train_model(model, train_dl, 20)
+        train_model(model, train_dl, options.epochs)
         torch.save(model.state_dict(), "final_model_weights.pt")
 
 if __name__ == "__main__":
