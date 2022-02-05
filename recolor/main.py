@@ -7,10 +7,10 @@ from data.faces import download_faces_data
 from fastai.data.external import URLs, untar_data
 from torch import nn, optim
 
-from .data_loaders import make_dataloaders
-from .models import MainModel, build_res_unet
-from .train import pretrain_generator, train_model
-from .utils import exists, str2bool
+from data_loaders import make_dataloaders
+from models import MainModel, build_res_unet
+from train import pretrain_generator, train_model
+from utils import exists, str2bool
 
 
 def check_opts(opts):
@@ -113,3 +113,6 @@ def main():
         model = MainModel(net_G=net_G, device=device)
         train_model(model, train_dl, 20)
         torch.save(model.state_dict(), "final_model_weights.pt")
+
+if __name__ == "__main__":
+    main()
