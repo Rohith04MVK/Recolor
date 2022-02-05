@@ -70,14 +70,16 @@ def main():
     paths = []
     if options.type == "face":
         download_faces_data()
-        paths.extend(glob.glob("../data/celebahq/celeba_hq/train/female/*.jpg"))
-        paths.extend(glob.glob("../data/celebahq/celeba_hq/train/male/*.jpg"))
-        paths.extend(glob.glob("../data/celebahq/celeba_hq/val/female/*.jpg"))
-        paths.extend(glob.glob("../data/celebahq/celeba_hq/val/male/*.jpg"))
+        paths.extend(glob.glob("~/datasets/celebahq/celeba_hq/train/female/*.jpg"))
+        paths.extend(glob.glob("~/datasets/celebahq/celeba_hq/train/male/*.jpg"))
+        paths.extend(glob.glob("~/datasets/celebahq/celeba_hq/val/female/*.jpg"))
+        paths.extend(glob.glob("~/datasets/celebahq/celeba_hq/val/male/*.jpg"))
+        print("Celebrity face dataset loaded!")
     else:
         coco_path = untar_data(URLs.COCO_SAMPLE)
         coco_path = str(coco_path) + "/train_sample"
         paths.extend(glob.glob(coco_path + "/*.jpg"))
+        print("COCO dataset loaded!")
 
     np.random.seed(123)
     paths_subset = np.random.choice(paths, 20_000, replace=False)  # choosing 1000 images randomly
