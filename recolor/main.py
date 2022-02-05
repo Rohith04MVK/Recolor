@@ -67,6 +67,7 @@ def main():
     if options.use_gpu is False:
         device = "cpu"
     print(options)
+    print(device)
     paths = []
     if options.type == "face":
         download_faces_data()
