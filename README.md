@@ -82,3 +82,8 @@ You will need the following to run the above:
 - `--model-path`: Path to trained model. Required
 - `--input-img`: Path to image to recolor. Required
 - `--output`: Path to save the genarated image to. Required
+
+## Attributions/Thanks
+
+- [Image-to-Image Translation with Conditional Adversarial Networks paper](https://arxiv.org/abs/1611.07004), which you may know by the name pix2pix,
+- [Colorful Image Colorization](https://arxiv.org/abs/1603.08511) which tackled this problem like a classification problem, but had its pros and cons 
