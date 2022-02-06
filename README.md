@@ -39,5 +39,5 @@ python3 recolor/main.py --train-type general \
 ```sh
 python infer.py --model-path path/to/model \
   --input-img path/to/input/image \
-  --output path/to/save/image \
+  --output path/to/save/output/image \
 ```
