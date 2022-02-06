@@ -61,12 +61,14 @@ You will need the following to run the above:
 **Flags**
 
 - `--train-type`: What type of model to train, we support a face recolor model and a general recolor model. Required
-- `--save-path`:  Path to save the models to. Required
+- `--save-path`: Path to save the models to. Required
 - `--pretrain`: If to pretrain the gan, gives better results. Required
 - `--epochs`: Number of times to train the model for. Required
 - `--use-gpu`: If to use a gpu to train the model. Required
 
 ### infer.py
+
+**Flags**
 
 - `--model-path`: Path to trained model. Required
 - `--input-img`: Path to image to recolor. Required
