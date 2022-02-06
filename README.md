@@ -51,3 +51,23 @@ You will need the following to run the above:
 - If you want to train (and don't want to wait for 4 months):
   - A decent GPU
   - All the required NVIDIA software to run Torch on a GPU (cuda, etc)
+
+## Documentation
+
+### main.py
+
+`main.py` trains networks that can transform black and white images into color images.
+
+**Flags**
+
+- `--train-type`: What type of model to train, we support a face recolor model and a general recolor model. Required
+- `--save-path`:  Path to save the models to. Required
+- `--pretrain`: If to pretrain the gan, gives better results. Required
+- `--epochs`: Number of times to train the model for. Required
+- `--use-gpu`: If to use a gpu to train the model. Required
+
+### infer.py
+
+- `--model-path`: Path to trained model. Required
+- `--input-img`: Path to image to recolor. Required
+- `--output`: Path to save the genarated image to. Required
