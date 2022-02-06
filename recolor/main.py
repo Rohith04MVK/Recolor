@@ -111,7 +111,7 @@ def main():
         net_G = build_res_unet(n_input=1, n_output=2, size=256)
         net_G.load_state_dict(torch.load(f"{options.save_path}/res18-unet.pt", map_location=device))
         model = MainModel(net_G=net_G, device=device)
-        train_model(model, train_dl, options.epochs)
+        train_model(model, train_dl, epochs=options.epochs)
         torch.save(model.state_dict(), f"{options.save_path}/final_model_weights.pt")
 
 
