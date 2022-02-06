@@ -47,4 +47,4 @@ You will need the following to run the above:
 - Python 2.8.5, Pillow 8.2.0, numpy 1.20.3, fastai 2.4
 - If you want to train (and don't want to wait for 4 months):
   - A decent GPU
-  - All the required NVIDIA software to run TF on a GPU (cuda, etc)
+  - All the required NVIDIA software to run Torch on a GPU (cuda, etc)
