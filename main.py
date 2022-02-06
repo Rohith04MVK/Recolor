@@ -7,10 +7,10 @@ from data.faces import download_faces_data
 from fastai.data.external import URLs, untar_data
 from torch import nn, optim
 
-from data_loaders import make_dataloaders
-from models import MainModel, build_res_unet
-from train import pretrain_generator, train_model
-from utils import exists, str2bool
+from recolor.data_loaders import make_dataloaders
+from recolor.models import MainModel, build_res_unet
+from recolor.train import pretrain_generator, train_model
+from recolor.utils import exists, str2bool
 
 
 def check_opts(opts):

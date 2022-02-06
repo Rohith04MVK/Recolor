@@ -28,7 +28,7 @@ pipenv shell
 #### Train the model
 
 ```sh
-python3 recolor/main.py --train-type general \
+python3 main.py --train-type general \
   --save-path /kaggle/working/output \
   --pretrain y \
   --epochs 20 \
