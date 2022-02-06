@@ -30,7 +30,7 @@ python3 recolor/main.py --train-type general \
   --save-path /kaggle/working/output \ 
   --pretrain y \
   --epochs 20 \
-  --use-gpu y\
+  --use-gpu y
 ```
 
 #### Run the main script
