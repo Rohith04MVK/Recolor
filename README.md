@@ -51,6 +51,15 @@ You will need the following to run the above:
 - If you want to train (and don't want to wait for 4 months):
   - A decent GPU
   - All the required NVIDIA software to run Torch on a GPU (cuda, etc)
+ 
+ Tested on:
+ 
+ | Spec                        |                                                             |
+|-----------------------------|-------------------------------------------------------------|
+| Operating System            | Ubuntu 20.04.3                                              |
+| GPU                         | NVIDIA Tesla P100 PCIe 16GB                                 |
+| CUDA Version                | 11.0                                                        |
+| Driver Version              | 450.119                                                     |
 
 ## Documentation
 
