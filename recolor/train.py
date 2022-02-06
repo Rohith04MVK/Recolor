@@ -1,6 +1,6 @@
 from tqdm import tqdm
 
-from recolor.utils import (
+from .utils import (
     create_loss_meters, update_losses, log_results, visualize, AverageMeter
 )
 
