@@ -51,15 +51,15 @@ You will need the following to run the above:
 - If you want to train (and don't want to wait for 4 months):
   - A decent GPU
   - All the required NVIDIA software to run Torch on a GPU (cuda, etc)
- 
- Tested on:
- 
- | Spec                        |                                                             |
-|-----------------------------|-------------------------------------------------------------|
-| Operating System            | Ubuntu 20.04.3                                              |
-| GPU                         | NVIDIA Tesla P100 PCIe 16GB                                 |
-| CUDA Version                | 11.0                                                        |
-| Driver Version              | 450.119                                                     |
+
+Tested on:
+
+| Spec             |                             |
+| ---------------- | --------------------------- |
+| Operating System | Ubuntu 20.04.3              |
+| GPU              | NVIDIA Tesla P100 PCIe 16GB |
+| CUDA Version     | 11.0                        |
+| Driver Version   | 450.119                     |
 
 ## Documentation
 
@@ -86,4 +86,4 @@ You will need the following to run the above:
 ## Attributions/Thanks
 
 - [Image-to-Image Translation with Conditional Adversarial Networks paper](https://arxiv.org/abs/1611.07004), which you may know by the name pix2pix.
-- [Colorful Image Colorization](https://arxiv.org/abs/1603.08511) which tackled this problem like a classification problem but had its pros and cons .
+- [Colorful Image Colorization](https://arxiv.org/abs/1603.08511) which tackled this problem like a classification problem but had its pros and cons.
