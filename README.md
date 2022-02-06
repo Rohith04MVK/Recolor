@@ -85,5 +85,5 @@ You will need the following to run the above:
 
 ## Attributions/Thanks
 
-- [Image-to-Image Translation with Conditional Adversarial Networks paper](https://arxiv.org/abs/1611.07004), which you may know by the name pix2pix,
-- [Colorful Image Colorization](https://arxiv.org/abs/1603.08511) which tackled this problem like a classification problem, but had its pros and cons 
+- [Image-to-Image Translation with Conditional Adversarial Networks paper](https://arxiv.org/abs/1611.07004), which you may know by the name pix2pix.
+- [Colorful Image Colorization](https://arxiv.org/abs/1603.08511) which tackled this problem like a classification problem but had its pros and cons .
