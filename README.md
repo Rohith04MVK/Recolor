@@ -27,8 +27,8 @@ pipenv shell
 #### Train the model
 
 ```sh
-python3 recolor/main.py --train-type general \ 
-  --save-path /kaggle/working/output \ 
+python3 recolor/main.py --train-type general \
+  --save-path /kaggle/working/output \
   --pretrain y \
   --epochs 20 \
   --use-gpu y
@@ -41,8 +41,11 @@ python infer.py --model-path path/to/model \
   --input-img path/to/input/image \
   --output path/to/save/output/image \
 ```
+
 ## Requirements
+
 You will need the following to run the above:
+
 - Torch 1.9.1
 - Python 2.8.5, Pillow 8.2.0, numpy 1.20.3, fastai 2.4
 - If you want to train (and don't want to wait for 4 months):
