@@ -80,8 +80,8 @@ Tested on:
 
 **Flags**
 
-- `--model-path`: Path to trained model. Required
-- `--input-img`: Path to image to recolor. Required
+- `--checkpoint-dir"`: Path to trained model. Required
+- `--input-path`: Path to image to recolor. Required
 - `--output`: Path to save the genarated image to. Required
 
 ## Attributions/Thanks
