@@ -11,6 +11,7 @@ Here are the commands to facilitate using this project.
 
 ```sh
 git clone https://github.com/Rohith04MVK/Recolor
+cd Recolor
 ```
 
 #### Install dependencies and Open the shell
@@ -33,8 +34,10 @@ python3 recolor/main.py --train-type general \
   --use-gpu y
 ```
 
-#### Run the main script
+#### Inference
 
 ```sh
-python example.py
+python infer.py --model-path path/to/model \
+  --input-img path/to/input/image \
+  --output path/to/save/image \
 ```
