@@ -1,6 +1,6 @@
 <h1 align="center"> Recolor</h1>
 <h3 align="center">Retouch old black and white imges whith Recolor!</h3>
-<p align="center"><img src="images/index.jpg" /></p>
+<p align="center"><img src="/images/index.jpg" /></p>
 
 ## Installation and Usage
 
