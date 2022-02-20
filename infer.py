@@ -20,10 +20,10 @@ def build_parser():
     parser = argparse.ArgumentParser()
 
     parser.add_argument("--checkpoint-dir", type=str,
-                        dest="checkpoint_dir", help="Path to data",
+                        dest="checkpoint_dir", help="Path to trained models",
                         metavar="IN_PATH", required=False)
 
-    parser.add_argument("--input-image", type=str,
+    parser.add_argument("--input-path", type=str,
                         dest="input_path",
                         help="Path to the image to process",
                         metavar="INPUT_PATH", required=True)
@@ -63,4 +63,4 @@ def main():
         preds = model.net_G(img.unsqueeze(0).to(device))
     colorized = lab_to_rgb(img.unsqueeze(0), preds.cpu())[0]
     result = PIL.Image.fromarray((colorized * 255).astype(np.uint8))
-    result.save('result.jpg')
+    result.save(options.output_path)
