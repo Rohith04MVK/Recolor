@@ -59,7 +59,7 @@ def build_parser():
     return parser
 
 
-def main():
+if __name__ == "__main__":
     parser = build_parser()
     options = parser.parse_args()
     check_opts(options)
@@ -114,7 +114,3 @@ def main():
         model = MainModel(net_G=net_G, device=device)
         train_model(model, train_dl, val_dl, epochs=options.epochs)
         torch.save(model.state_dict(), f"{options.save_path}/final_model_weights.pt")
-
-
-if __name__ == "__main__":
-    main()

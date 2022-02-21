@@ -1,6 +1,6 @@
 <h1 align="center"> Recolor</h1>
 <h3 align="center">Retouch old black and white imges whith Recolor!</h3>
-<p align="center"><img src="images/index.jpg" /></p>
+<p align="center"><img src="/images/index.jpg" /></p>
 
 ## Installation and Usage
 
@@ -80,8 +80,8 @@ Tested on:
 
 **Flags**
 
-- `--model-path`: Path to trained model. Required
-- `--input-img`: Path to image to recolor. Required
+- `--checkpoint-dir`: Path to trained model. Required
+- `--input-path`: Path to image to recolor. Required
 - `--output`: Path to save the genarated image to. Required
 
 ## Attributions/Thanks
