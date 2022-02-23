@@ -31,7 +31,7 @@ pipenv shell
 python3 main.py --train-type general \
   --save-path /kaggle/working/output \
   --pretrain y \
-  --epochs 20 \
+  --epochs 25 \
   --use-gpu y
 ```
 
