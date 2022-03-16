@@ -17,16 +17,6 @@ def check_opts(opts):
 def build_parser():
     parser = argparse.ArgumentParser()
 
-<<<<<<< HEAD
-    parser.add_argument("--checkpoint-dir", type=str,
-                        dest="checkpoint_dir", help="Path to trained models",
-                        metavar="IN_PATH", required=False)
-
-    parser.add_argument("--input-path", type=str,
-                        dest="input_path",
-                        help="Path to the image to process",
-                        metavar="INPUT_PATH", required=True)
-=======
     parser.add_argument(
         "--checkpoint-dir",
         type=str,
@@ -44,7 +34,6 @@ def build_parser():
         metavar="INPUT_PATH",
         required=True
     )
->>>>>>> 267f70746334841a251f4342307062fe7ca4f20c
 
     parser.add_argument(
         "--output",
