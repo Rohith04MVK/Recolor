@@ -115,6 +115,12 @@ class MainModel(nn.Module):
         self.loss_D.backward()
 
     def backward_G(self):
+        """
+        The generator takes in the L channel of the image and the ab channels of the image, and outputs a
+        fake color image. The discriminator takes in the L channel of the image and the fake color image,
+        and outputs a prediction of whether the image is real or fake. The generator is trained to fool the
+        discriminator, and the discriminator is trained to correctly classify real and fake images
+        """
         fake_image = torch.cat([self.L, self.fake_color], dim=1)
         fake_preds = self.net_D(fake_image)
         self.loss_G_GAN = self.GANcriterion(fake_preds, True)

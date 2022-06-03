@@ -10,7 +10,11 @@ from skimage.color import lab2rgb
 
 def lab_to_rgb(L, ab):
     """
-    Takes a batch of images
+    It takes a batch of images, converts them from LAB to RGB, and returns the batch of RGB images
+    
+    :param L: The L channel of the image
+    :param ab: the ab channels of the image
+    :return: A batch of images
     """
     L = (L + 1.) * 50.
     ab = ab * 110.
@@ -23,6 +27,14 @@ def lab_to_rgb(L, ab):
 
 
 def visualize(model, data, save=True):
+    """
+    It takes a model, a data batch, and a boolean flag, and it visualizes the model's output on the data
+    batch
+    
+    :param model: the model we just created
+    :param data: the data object that contains the images and labels
+    :param save: whether to save the image or not, defaults to True (optional)
+    """
     model.net_G.eval()
     with torch.no_grad():
         model.setup_input(data)
@@ -50,6 +62,12 @@ def visualize(model, data, save=True):
 
 
 def log_results(loss_meter_dict):
+    """
+    It takes a dictionary of loss meters and prints the average loss for each one
+    
+    :param loss_meter_dict: a dictionary of loss meters, where the key is the name of the loss and the
+    value is the loss meter
+    """
     for loss_name, loss_meter in loss_meter_dict.items():
         print(f"{loss_name}: {loss_meter.avg:.5f}")
 
@@ -83,13 +101,27 @@ def create_loss_meters():
             'loss_G': loss_G}
 
 
-def update_losses(model, loss_meter_dict, count):
+def update_losses(model, loss_meter_dict, count) -> None:
+    """
+    It updates the loss meters in the dictionary with the loss values from the model
+    
+    :param model: the model we're training
+    :param loss_meter_dict: a dictionary of loss meters, where the keys are the names of the losses and
+    the values are the loss meters
+    :param count: the number of samples in the batch
+    """
     for loss_name, loss_meter in loss_meter_dict.items():
         loss = getattr(model, loss_name)
         loss_meter.update(loss.item(), count=count)
 
 
 def str2bool(arg):
+    """
+    It converts a string to a boolean
+    
+    :param arg: The argument to be converted
+    :return: A boolean value.
+    """
     if isinstance(arg, bool):
         return arg
     if arg.lower() in ('yes', 'true', 't', 'y', '1'):
@@ -101,4 +133,10 @@ def str2bool(arg):
 
 
 def exists(p, msg):
+    """
+    It asserts that the path p exists, and if it doesn't, it raises an error with the message msg
+    
+    :param p: path to the file
+    :param msg: The error message to be displayed in case the assertion fails
+    """
     assert os.path.exists(p), msg

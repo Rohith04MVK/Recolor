@@ -6,6 +6,18 @@ from .utils import (
 
 
 def train_model(model, train_dl, val_dl, epochs, display_every=200):
+    """
+    The function takes in a model, a training dataloader, a validation dataloader, the number of
+    epochs to train for, and a display_every parameter which is the number of iterations after which the
+    model's outputs are displayed
+    
+    :param model: the model object
+    :param train_dl: the training dataloader
+    :param val_dl: validation dataloader
+    :param epochs: number of epochs to train for
+    :param display_every: The number of iterations after which the model's output is displayed, defaults
+    to 200 (optional)
+    """
     data = next(iter(val_dl))  # getting a batch for visualizing the model output after fixed intrvals
 
     for e in range(epochs):
@@ -28,6 +40,18 @@ def train_model(model, train_dl, val_dl, epochs, display_every=200):
 
 
 def pretrain_generator(net_G, train_dl, opt, criterion, epochs, device):
+    """
+    It takes a generator network, a dataloader, an optimizer, a loss function, the number of epochs to
+    train for, and a device to train on, and trains the generator network for the specified number of
+    epochs
+    
+    :param net_G: the generator network
+    :param train_dl: the training dataloader
+    :param opt: the optimizer
+    :param criterion: The loss function to use
+    :param epochs: number of epochs to train for
+    :param device: the device to run the training on
+    """
     for e in range(epochs):
         loss_meter = AverageMeter()
 
