@@ -2,6 +2,9 @@
 <h3 align="center">Retouch old black and white imges whith Recolor!</h3>
 <p align="center"><img src="/images/index.jpg" /></p>
 
+## **TODO**
+ - Better image quality
+
 ## Installation and Usage
 
 This project uses `pipenv` for dependency management. You need to ensure that you have pipenv installed.
