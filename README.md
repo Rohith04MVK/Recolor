@@ -74,18 +74,18 @@ Tested on:
 **Flags**
 
 - `--train-type`: What type of model to train, we support a face recolor model and a general recolor model. Required
-- `--save-path`: Path to save the models to. Required
-- `--pretrain`: If to pretrain the gan, gives better results. Required
+- `--save-path`: Path to save the models too. Required
+- `--pretrain`: If to pre-train the gan, gives better results. Required
 - `--epochs`: Number of times to train the model for. Required
-- `--use-gpu`: If to use a gpu to train the model. Required
+- `--use-gpu`: If to use a GPU to train the model. Required
 
 ### infer.py
 
 **Flags**
 
-- `--checkpoint-dir`: Path to trained model. Required
+- `--checkpoint-dir`: Path to the trained model. Required
 - `--input-path`: Path to image to recolor. Required
-- `--output`: Path to save the genarated image to. Required
+- `--output`: Path to save the generated image to. Required
 
 ## Attributions/Thanks
 
